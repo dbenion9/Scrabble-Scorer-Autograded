@@ -1,4 +1,3 @@
-
 const input = require('readline-sync');
 
 // Original Scrabble scoring structure
@@ -44,7 +43,7 @@ function vowelBonusScorer(word) {
 }
 
 // Scrabble scorer function
-function scrabbleScore(word) {
+function scrabbleScorer(word) {
   word = word.toLowerCase();
   let score = 0;
   for (let i = 0; i < word.length; i++) {
@@ -60,7 +59,7 @@ const newPointStructure = transform(oldPointStructure);
 const scoringAlgorithms = [
   { name: 'Simple Score', description: 'Each letter is worth 1 point.', scoringFunction: simpleScorer },
   { name: 'Bonus Vowels', description: 'Vowels are worth 3 points, consonants are worth 1 point.', scoringFunction: vowelBonusScorer },
-  { name: 'Scrabble', description: 'The traditional scoring algorithm.', scoringFunction: scrabbleScore }
+  { name: 'Scrabble', description: 'The traditional scoring algorithm.', scoringFunction: scrabbleScorer }
 ];
 
 function initialPrompt() {
@@ -93,18 +92,50 @@ function runProgram() {
 // Run the program
 runProgram();
 
+
 // Don't write any code below this line //
 // And don't change these or your program will not run as expected //
 module.exports = {
-  initialPrompt,
-  transform,
-  oldPointStructure,
-  simpleScorer,
-  vowelBonusScorer,
-  scrabbleScore,  // Ensure this is correctly exported
-  scoringAlgorithms,
-  newPointStructure,
-  runProgram,
-  scorerPrompt
+  initialPrompt: initialPrompt,
+  transform: transform,
+  oldPointStructure: oldPointStructure,
+  simpleScorer: simpleScorer,
+  vowelBonusScorer: vowelBonusScorer,
+  scrabbleScorer: scrabbleScorer,
+  scoringAlgorithms: scoringAlgorithms,
+  newPointStructure: newPointStructure,
+  runProgram: runProgram,
+  scorerPrompt: scorerPrompt
 };
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
