@@ -82,7 +82,7 @@ function scorerPrompt(word) {
     return;
   }
 
-  const score = scoringAlgorithms[choice].scoringFunction(word);
+  const score = scoringAlgorithms[choice].scorerFunction(word);
   console.log(`Score for '${word}': ${score}`);
 }
 
