@@ -1,3 +1,4 @@
+
 const input = require('readline-sync');
 
 // Original Scrabble scoring structure
@@ -21,6 +22,7 @@ function transform(oldPointStructure) {
   }
   return newPointStructure;
 }
+
 
 // Simple scorer function
 function simpleScorer(word) {
@@ -57,9 +59,9 @@ const newPointStructure = transform(oldPointStructure);
 
 // Scoring algorithms array
 const scoringAlgorithms = [
-  { name: 'Simple Score', description: 'Each letter is worth 1 point.', scoringFunction: simpleScorer },
-  { name: 'Bonus Vowels', description: 'Vowels are worth 3 points, consonants are worth 1 point.', scoringFunction: vowelBonusScorer },
-  { name: 'Scrabble', description: 'The traditional scoring algorithm.', scoringFunction: scrabbleScorer }
+  { name: 'Simple Score', description: 'Each letter is worth 1 point.', scorerFunction: simpleScorer },
+  { name: 'Bonus Vowels', description: 'Vowels are worth 3 points, consonants are worth 1 point.', scorerFunction: vowelBonusScorer },
+  { name: 'Scrabble', description: 'The traditional scoring algorithm.', scorerFunction: scrabbleScorer }
 ];
 
 function initialPrompt() {
@@ -89,8 +91,7 @@ function runProgram() {
   scorerPrompt(word);
 }
 
-// Run the program
-runProgram();
+
 
 
 // Don't write any code below this line //
@@ -108,34 +109,3 @@ module.exports = {
   scorerPrompt: scorerPrompt
 };
 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
